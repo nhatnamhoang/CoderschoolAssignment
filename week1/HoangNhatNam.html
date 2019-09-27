@@ -1,0 +1,31 @@
+<div id="message"></div>
+<input type="number" id="number">
+<button id="guessButton">gruess</button>
+
+<script>
+  let button = document.getElementById('guessButton');
+let warning = document.getElementById('warning');
+let result = Math.round((Math.random() * 10));
+let wrong = [];
+button.addEventListener('click', function() {
+   let userGuess = document.getElementById('number').value;
+   let message = document.getElementById('message');
+
+  if(userGuess > result){
+    message.innerHTML ='so ban doan lon hon ket qua';
+    message.style.color = "red";
+    wrong.push(userGuess);
+    warning.innerHTML = "bạn còn " +  (10 -wrong.length) + "lần đoán";
+  } else if ( userGuess < result){
+    message.innerHTML ='so ban doan nho hon ket qua';
+    message.style.color = "red";
+    wrong.push(userGuess);
+    warning.innerHTML = "bạn còn " + (10 -wrong.length) + "lần đoán";
+  } else{
+     message.innerHTML ='chinh xac';
+     message.style.color = "green";
+     wrong = [];
+    warning.innerHTML = "bạn đã thắng cuộc";
+  }
+});
+</script>
