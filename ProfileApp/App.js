@@ -147,7 +147,7 @@ export default class App extends React.Component {
         <View
           style={[
             styles.row, {
-            flex: 0.2,
+            flex: 0.1,
             justifyContent: 'center',
             alignItems: 'center'
           }]}>
